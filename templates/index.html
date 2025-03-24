@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Gia Đình Bâu Bống</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffffd9;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.main-title {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: #8e44ad;
+    margin-bottom: 20px;
+    font-size: 2.8em;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.fade {
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.4 }
+    to { opacity: 1 }
+}
+
+h2 {
+    margin-top: 30px;
+    color: #2c3e50;
+    border-bottom: 2px solid #8e44ad;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.generation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.member {
+    text-align: center;
+    max-width: 180px;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.member img:hover {
+    transform: scale(1.05);
+}
+
+.member p {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #34495e;
+}
+.member img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+    font-style: italic;
+}
+.tet-photos {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.tet-photos h2 {
+    font-size: 28px;
+    color: #b30000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 250px; /* hoặc 300px nếu muốn to hơn */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="main-title">Gia Đình Bâu Bống</h1>
+
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/family1.jpg') }}" alt="Ảnh gia đình 1">
+            </div>
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/family2.jpg') }}" alt="Ảnh gia đình 2">
+            </div>
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/family3.jpg') }}" alt="Ảnh gia đình 3">
+            </div>
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/family4.jpg') }}" alt="Ảnh gia đình 4">
+            </div>
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/family5.jpg') }}" alt="Ảnh gia đình 5">
+            </div>
+        </div>
+
+        <!-- Thế hệ 1 -->
+        <h2>Thế hệ đầu</h2>
+        <div class="generation">
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/ba_noi.jpg') }}" alt="Bà nội">
+                <p>Nguyễn Thị Ngần</p>
+            </div>
+        </div>
+
+        <!-- Thế hệ 2 -->
+        <h2>Thế hệ 2</h2>
+        <div class="generation">
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/kien_trung.jpg') }}" alt="Kiên Trung">
+                <p>Nguyễn Kiên Trung</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/thanh_van.jpg') }}" alt="Thanh Vân">
+                <p>Dương Thị Thanh Vân</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/trung_thanh.jpg') }}" alt="Trung Thành">
+                <p>Nguyễn Trung Thành</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/thanh_thuy.jpg') }}" alt="Thanh Thủy">
+                <p>Nguyễn Thanh Thủy</p>
+            </div>
+        </div>
+
+        <!-- Thế hệ 3 -->
+        <h2>Thế hệ 3</h2>
+        <div class="generation">
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/tuan_dung.jpg') }}" alt="Tuấn Dũng">
+                <p>Nguyễn Tuấn Dũng</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/thao_vy.jpg') }}" alt="Thảo Vy">
+                <p>Nguyễn Thảo Vy</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/nhat_khanh.jpg') }}" alt="Nhật Khánh">
+                <p>Nguyễn Nhật Khánh</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/bao_nhu.jpg') }}" alt="Bảo Như">
+                <p>Nguyễn Bảo Như</p>
+            </div>
+        </div>
+    </div>
+    <section class="tet-photos">
+        <h2>Ảnh Tết 2025</h2>
+        <div class="photo-grid">
+            <img src="{{ url_for('static', filename='images/tet1.jpg') }}" alt="Tết 1">
+            <img src="{{ url_for('static', filename='images/tet2.jpg') }}" alt="Tết 2">
+            <img src="{{ url_for('static', filename='images/tet3.jpg') }}" alt="Tết 3">
+            <img src="{{ url_for('static', filename='images/tet4.jpg') }}" alt="Tết 4">
+            <img src="{{ url_for('static', filename='images/tet5.jpg') }}" alt="Tết 5">
+            <img src="{{ url_for('static', filename='images/tet6.jpg') }}" alt="Tết 6">
+            <img src="{{ url_for('static', filename='images/tet7.jpg') }}" alt="Tết 7">
+            <img src="{{ url_for('static', filename='images/tet8.jpg') }}" alt="Tết 8">
+            <img src="{{ url_for('static', filename='images/tet9.jpg') }}" alt="Tết 9">
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Made with ❤️ by Dũng NT – 2025</p>
+    </footer>
+    
+    <script>
+        let slideIndex = 0;
+        const showSlides = () => {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000);
+        };
+        showSlides();
+    </script>
+</body>
+</html>
